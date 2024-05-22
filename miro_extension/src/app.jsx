@@ -1,50 +1,50 @@
 import * as React from 'react';
-import {createRoot} from 'react-dom/client';
-
+import { createRoot } from 'react-dom/client';
+import Papa from 'papaparse'; 
 import '../src/assets/style.css';
 
-const fs = require('fs');
+let csvData = null;
+async function handleFileUpload(event) {
+  const file = event.target.files[0]; 
+  if (!file) return;
 
-function loadCsv(filePath) {
-  // Read the file
-  const data = fs.readFileSync(filePath, 'utf8');
-
-  // Split the file into lines
-  const lines = data.split("\n");
-
-  // Initialize the output array
-  const output = [];
-
-  // Loop through each line and split it into fields
-  lines.forEach((line) => {
-    const fields = line.split(",");
-    output.push(fields);
-  });
-
-  return output;
+  const reader = new FileReader();
+  reader.onload = async function(event) {
+    const csvText = event.target.result; 
+    Papa.parse(csvText, {
+      complete: function(results) {
+        csvData = results.data; 
+      }
+    });
+  };
+  reader.readAsText(file); 
 }
 
-const csvData = loadCsv('miro_extension/tshirt-data.csv');
+async function createMap() {
+  addFrame(csvData.length.toString());
+  addSticky();
+}
 
-
-
-
-
-async function addSticky() {
+async function addSticky(word = '') {
   const stickyNote = await miro.board.createStickyNote({
-    content: csvData[2][1],
+    content: word,
   });
+}
 
-  await miro.board.viewport.zoomTo(stickyNote);
+async function addFrame(content) {
+  const frame = await miro.board.createFrame({
+    title: csvData.length.toString(),
+    style: {
+      fillColor: '#ffffff',
+    },
+    x: 0, // Default value: horizontal center of the board
+    y: 0, // Default value: vertical center of the board
+    width: 800,
+    height: 450,
+  });
 }
 
 const App = () => {
-  React.useEffect(() => {
-    addSticky();
-  }, []);
-
-  
-
   return (
     <div className="grid wrapper">
       <div className="cs1 ce12">
@@ -54,8 +54,8 @@ const App = () => {
       </div>
       <div className="cs1 ce12">
         <form>
-          <input type="file" />
-          <button type="submit">Submit</button>
+          <input type="file" onChange={handleFileUpload} /> {}
+          <button type="button" onClick={createMap}>Submit</button> {}
         </form>
       </div>
     </div>
