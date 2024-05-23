@@ -27,6 +27,7 @@ async function createMap() {
   addFrame(csvData.length.toString());
   addSticky();
   addText(); 
+  addImage(); 
 }
 
 async function addSticky(word = '') {
@@ -69,8 +70,18 @@ async function addCaption(){
 
 }
 
-async function addImage(){
-
+async function addImage(imageUrl = '') {
+  const image = await miro.board.createImage({
+    title: 'This is an image',
+    url: 'https://miro.com/blog/wp-content/uploads/2023/10/Frame-12772209-1536x806.png',
+    x: 0, // Default value: horizontal center of the board
+    y: 0, // Default value: vertical center of the board
+    width: 800, // Set either 'width', or 'height'
+    rotation: 0.0,
+  });
+  
+  // Output the created item to the developer console
+  console.log(image);
 }
 
 async function addTitle(){
@@ -95,7 +106,7 @@ const App = () => {
   return (
     <div className="grid wrapper">
       <div className="cs1 ce12">
-        <h1>Design Studio</h1>
+        <h1>SpectrandLLC Extension</h1>
         <p>Upload a CSV file to get started!</p>
         
       </div>
