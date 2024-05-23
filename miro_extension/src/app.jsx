@@ -18,11 +18,15 @@ async function handleFileUpload(event) {
     });
   };
   reader.readAsText(file); 
+
+  
 }
 
 async function createMap() {
+  console.log(csvData)
   addFrame(csvData.length.toString());
   addSticky();
+  addText(); 
 }
 
 async function addSticky(word = '') {
@@ -30,6 +34,49 @@ async function addSticky(word = '') {
     content: word,
   });
 }
+
+
+
+async function addText(word = ''){
+  const caption = csvData[1][2]; 
+  console.log(caption) 
+  const text = await miro.board.createText({
+    content: `<p>${caption}</p>`,
+    style: {
+      color: '#1a1a1a', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'ariel', // Default font type for the text
+      fontSize: 20, // Default font size
+      textAlign: 'left', // Default alignment: left
+    },
+    x: 0,
+    y: 0,
+    width: 720,
+    // 'height' is calculated automatically, based on 'width'
+    rotation: 0, // The text item is upside down on the board
+  });
+  
+  // Output the created item to the developer console
+  console.log(text);
+}
+
+async function addItem(content){
+  
+}
+
+async function addCaption(){
+
+}
+
+async function addImage(){
+
+}
+
+async function addTitle(){
+
+}
+
 
 async function addFrame(content) {
   const frame = await miro.board.createFrame({
