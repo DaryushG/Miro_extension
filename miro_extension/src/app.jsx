@@ -18,16 +18,32 @@ async function handleFileUpload(event) {
     });
   };
   reader.readAsText(file); 
-
-  
 }
 
+let items = [];
 async function createMap() {
-  console.log(csvData)
-  addFrame(csvData.length.toString());
-  addSticky();
-  addText(); 
-  addImage(); 
+  //mainFrame(csvData.length.toString());
+  for (let i = 0; i < 1; i++) {
+    items[i] = await frame();
+  }
+  items[0].title = "changed";
+  items[0].sync();
+  console.log(items[0].title);
+}
+
+
+async function frame(content = '') {
+  const frame = await miro.board.createFrame({
+    title: "second",
+    style: {
+      fillColor: '#ffffff',
+    },
+    x: 0, // Default value: horizontal center of the board
+    y: 0, // Default value: vertical center of the board
+    width: 1600,
+    height: 900,
+  });
+  return frame;
 }
 
 async function addSticky(word = '') {
@@ -40,7 +56,6 @@ async function addSticky(word = '') {
 
 async function addText(word = ''){
   const caption = csvData[1][2]; 
-  console.log(caption) 
   const text = await miro.board.createText({
     content: `<p>${caption}</p>`,
     style: {
@@ -53,13 +68,13 @@ async function addText(word = ''){
     },
     x: 0,
     y: 0,
-    width: 720,
+    width: 240,
     // 'height' is calculated automatically, based on 'width'
     rotation: 0, // The text item is upside down on the board
   });
   
   // Output the created item to the developer console
-  console.log(text);
+  return text;
 }
 
 async function addItem(content){
@@ -89,7 +104,7 @@ async function addTitle(){
 }
 
 
-async function addFrame(content) {
+async function mainFrame(content = '') {
   const frame = await miro.board.createFrame({
     title: csvData.length.toString(),
     style: {
@@ -97,8 +112,8 @@ async function addFrame(content) {
     },
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
-    width: 800,
-    height: 450,
+    width: 1600,
+    height: 900,
   });
 }
 
@@ -106,7 +121,7 @@ const App = () => {
   return (
     <div className="grid wrapper">
       <div className="cs1 ce12">
-        <h1>SpectrandLLC Extension</h1>
+        <h1>Spectrand Extension</h1>
         <p>Upload a CSV file to get started!</p>
         
       </div>
