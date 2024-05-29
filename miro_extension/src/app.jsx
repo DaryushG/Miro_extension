@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client';
 import Papa from 'papaparse'; 
 import '../src/assets/style.css';
 
+let frameW = null;
+let frameL = null;
+
 let csvData = null;
 async function handleFileUpload(event) {
   const file = event.target.files[0]; 
@@ -21,29 +24,73 @@ async function handleFileUpload(event) {
 }
 
 let items = [];
-async function createMap() {
-  //mainFrame(csvData.length.toString());
-  for (let i = 0; i < 1; i++) {
+async function createMapV() {
+  let lengthScale = Math.floor((csvData.length / 4) + 1);
+  frameL = 900 * lengthScale; 
+  console.log(frameL)
+  frameW = 600 * 4;
+  mainFrame(csvData.length.toString());
+  let countX = 0;
+  let countY = 0;
+  for (let i = 0; i < 15; i++) {
     items[i] = await frame();
+    card(csvData[i][1]);
+    items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
+    items[i].sync();
+    if (countX <= 1) {
+      items[i].x = items[i].x - 600 * countX - 300;
+      items[i].sync();
+      countX = countX + 1;
+      
+    }
+    else {
+      items[i].x = items[i].x - 300 - (1 - countX) * 600;
+      items[i].sync();
+      if (countX == 3) {
+        countX = 0;
+        countY = countY + 1;
+      }
+      else {
+        countX = countX + 1;
+      }
+    }
   }
-  items[0].title = "changed";
-  items[0].sync();
-  console.log(items[0].title);
 }
 
+async function card(content = '') {
+  const frame = await miro.board.createCard({
+    title: content,
+  });
+  return frame;
+}
 
 async function frame(content = '') {
+  let dyanmicW = 600;
+  let dyanmicL = 900;
+
   const frame = await miro.board.createFrame({
-    title: "second",
     style: {
-      fillColor: '#ffffff',
+      fillColor: '#2596be',
     },
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
-    width: 1600,
-    height: 900,
+    width: dyanmicW,
+    height: dyanmicL, 
   });
   return frame;
+}
+
+async function mainFrame(content = '') {
+  const frame = await miro.board.createFrame({
+    title: csvData.length.toString(),
+    style: {
+      fillColor: '#555555',
+    },
+    x: 0, // Default value: horizontal center of the board
+    y: 0, // Default value: vertical center of the board
+    width: frameW,
+    height: frameL,
+  });
 }
 
 async function addSticky(word = '') {
@@ -104,18 +151,7 @@ async function addTitle(){
 }
 
 
-async function mainFrame(content = '') {
-  const frame = await miro.board.createFrame({
-    title: csvData.length.toString(),
-    style: {
-      fillColor: '#ffffff',
-    },
-    x: 0, // Default value: horizontal center of the board
-    y: 0, // Default value: vertical center of the board
-    width: 1600,
-    height: 900,
-  });
-}
+
 
 const App = () => {
   return (
@@ -128,7 +164,7 @@ const App = () => {
       <div className="cs1 ce12">
         <form>
           <input type="file" onChange={handleFileUpload} /> {}
-          <button type="button" onClick={createMap}>Submit</button> {}
+          <button type="button" onClick={createMapV}>Submit</button> {}
         </form>
       </div>
     </div>
