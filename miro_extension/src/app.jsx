@@ -27,14 +27,13 @@ let items = [];
 async function createMapV() {
   let lengthScale = Math.floor((csvData.length / 4) + 1);
   frameL = 900 * lengthScale; 
-  console.log(frameL)
   frameW = 600 * 4;
   mainFrame(csvData.length.toString());
   let countX = 0;
   let countY = 0;
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < csvData.length; i++) {
     items[i] = await frame();
-    card(csvData[i][1]);
+    items[i].add(await card(csvData[i][1]));
     items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
     items[i].sync();
     if (countX <= 1) {
