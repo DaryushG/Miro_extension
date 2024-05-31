@@ -1,0 +1,156 @@
+[
+    {
+      "Product No": "MTN55534",
+      "Product Name": "Crewneck T-Shirt",
+      "Description": "Men's Solid Supima Blend Crewneck T-Shirt",
+      "Retail Price": 19.99,
+      "Currency": "USD",
+      "Brand": "",
+      "Quantity": 3000,
+      "Colorways": "Navy Blue, White Pure, Dark Lead, Pampador Blue",
+      "Size Range": "S, M, L, XL"
+    },
+    {
+      "Product No": "MTN55461",
+      "Product Name": "Crewneck T-Shier",
+      "Description": "Men's FLX Short Sleeve Stretch Crewneck Tee",
+      "Retail Price": 11.99,
+      "Currency": "USD",
+      "Brand": "",
+      "Quantity": 5000,
+      "Colorways": "Black, White, Olive, Maroon",
+      "Size Range": "XS, S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55530",
+      "Product Name": "Pocket Crewneck T-Shirt",
+      "Description": "Super-T Short Sleeve T-Shirt with Pocket",
+      "Retail Price": 32.95,
+      "Currency": "USD",
+      "Brand": "",
+      "Quantity": 4000,
+      "Colorways": "Dark Charcoal Heather, Chicory Blue, Primrose Yellow, Radiant Navy",
+      "Size Range": "S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55201",
+      "Product Name": "Athletic Crewneck T-Shirt",
+      "Description": "Men's Tek Gear® Essential Gear Tee",
+      "Retail Price": 14.99,
+      "Currency": "USD",
+      "Brand": "",
+      "Quantity": 8000,
+      "Colorways": "Orange, Black, Green, Red",
+      "Size Range": "XS, S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55614",
+      "Product Name": "Polo T-Shirt",
+      "Description": "Men's Lands' End Super Soft Supima Polo",
+      "Retail Price": 59.95,
+      "Currency": "USD",
+      "Brand": "Land's End",
+      "Quantity": 2500,
+      "Colorways": "Radiant Navy, White, Blackberry",
+      "Size Range": "S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55284",
+      "Product Name": "V-Neck T-Shirt",
+      "Description": "Men's Sonoma Goods For Life® V-Neck Tee",
+      "Retail Price": 9.99,
+      "Currency": "USD",
+      "Brand": "",
+      "Quantity": 7000,
+      "Colorways": "Black, White, Charcoal, Red, Blue",
+      "Size Range": "S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55447",
+      "Product Name": "Crewneck T-Shirt",
+      "Description": "Men's Oversized T-Shirt",
+      "Retail Price": 24.95,
+      "Currency": "USD",
+      "Brand": "AE",
+      "Quantity": 10000,
+      "Colorways": "Dark Blue, Tan, White, Faded Olive",
+      "Size Range": "S, M, L, XL, 2XL, 3XL"
+    },
+    {
+      "Product No": "MTN55448",
+      "Product Name": "Crewneck T-Shirt",
+      "Description": "Men's Oversized Striped T-Shirt with added stretch",
+      "Retail Price": 24.95,
+      "Currency": "USD",
+      "Brand": "AE",
+      "Quantity": 10000,
+      "Colorways": "Black, Navy, White",
+      "Size Range": "S, M, L, XL, 2XL, 3XL"
+    },
+    {
+      "Product No": "MTN55628",
+      "Product Name": "Crewneck T-Shirt",
+      "Description": "Men's Essential Relaxed Fit T-Shirt",
+      "Retail Price": 25,
+      "Currency": "USD",
+      "Brand": "A&F",
+      "Quantity": 15000,
+      "Colorways": "Light Blue, Light Green, Natural, Black, Dark Green, Light Purple",
+      "Size Range": "XS, S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55627",
+      "Product Name": "Sweater T-Shirt",
+      "Description": "Men's Plisse Johnny Collar Sweater Polo",
+      "Retail Price": 60,
+      "Currency": "USD",
+      "Brand": "A&F",
+      "Quantity": 6000,
+      "Colorways": "Dark Green, Black, White",
+      "Size Range": "XS, S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN53840",
+      "Product Name": "Crewneck T-Shirt",
+      "Description": "Men's Dryblend Classic T-Shirt",
+      "Retail Price": 10,
+      "Currency": "USD",
+      "Brand": "Gildan",
+      "Quantity": 2000,
+      "Colorways": "Royal Blue, Lime, Orange, Navy",
+      "Size Range": "S, M, L, XL, 2XL, 3XL, 4XL"
+    },
+    {
+      "Product No": "MTN55261",
+      "Product Name": "Crewneck T-Shirt",
+      "Description": "Heavyweight Boxy Crewneck T-Shirt",
+      "Retail Price": 19.95,
+      "Currency": "USD",
+      "Brand": "Hollister",
+      "Quantity": 9000,
+      "Colorways": "White, Washed Brown, Washed Black, Light Blue, Black",
+      "Size Range": "XS, S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55520",
+      "Product Name": "Henley T-Shirt",
+      "Description": "Sunwashed Organic Cotton Henley",
+      "Retail Price": 78,
+      "Currency": "USD",
+      "Brand": "",
+      "Quantity": 5500,
+      "Colorways": "Blue Oasis, Dune Navy, White",
+      "Size Range": "S, M, L, XL, 2XL"
+    },
+    {
+      "Product No": "MTN55521",
+      "Product Name": "Henley T-Shirt",
+      "Description": "Cotton Blend Henley",
+      "Retail Price": 49.5,
+      "Currency": "USD",
+      "Brand": "",
+      "Quantity": 1000,
+      "Colorways": "Blackened Pearl, Red Violet",
+      "Size Range": "S, M, L, XL, 2XL"
+    }
+  ]

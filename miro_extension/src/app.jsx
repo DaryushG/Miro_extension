@@ -2,6 +2,9 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import Papa from 'papaparse'; 
 import '../src/assets/style.css';
+import products from '../tshirt-data.json'
+
+console.log(products); 
 
 let frameW = null;
 let frameL = null;
@@ -29,21 +32,37 @@ async function createMapV() {
   frameL = 900 * lengthScale; 
   frameW = 600 * 4;
   mainFrame(csvData.length.toString());
+  // await addText(csvData[2][2], posx = 0, posy = 30);
+
   let countX = 0;
   let countY = 0;
+
+ 
   for (let i = 0; i < csvData.length; i++) {
     items[i] = await frame();
     items[i].add(await card(csvData[i][1]));
+    items[i].add(await addText(csvData[i][2]));
+    items[i].add(await addText(csvData[i][3]));
+    items[i].add(await addText(csvData[i][4]));
+    items[i].add(await addText(csvData[i][5]));
+
     items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
     items[i].sync();
+
+   
+    // if (i == 0){
+    //   children = items[i].children; 
+    //   console.log(children); 
+    // }
+    
     if (countX <= 1) {
-      items[i].x = items[i].x - 600 * countX - 300;
+      items[i].x = items[i].x - 600 * countX - 300 ;
       items[i].sync();
       countX = countX + 1;
       
     }
     else {
-      items[i].x = items[i].x - 300 - (1 - countX) * 600;
+      items[i].x = items[i].x - 300 - (1 - countX) * 600  ;
       items[i].sync();
       if (countX == 3) {
         countX = 0;
@@ -54,6 +73,34 @@ async function createMapV() {
       }
     }
   }
+
+  for (let i = 0; i < items.length; i++){
+
+    try {
+      let children = await items[i].getChildren(); 
+      if (children && children.length > 1) {
+        console.log(children[1].y); 
+        children[0].y -= 300; 
+        await children[0].sync(); 
+        children[1].y -= 250;
+        console.log(children[1].y); 
+        await children[1].sync()
+        
+        children[2].y -= 200; 
+        await children[2].sync();
+        children[3].y -= 150;
+        await children[3].sync();
+        await items[i].sync(); 
+      } else {
+        console.log('Not enough children');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  }
+
+
+
 }
 
 async function card(content = '') {
@@ -68,9 +115,6 @@ async function frame(content = '') {
   let dyanmicL = 900;
 
   const frame = await miro.board.createFrame({
-    style: {
-      fillColor: '#2596be',
-    },
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
     width: dyanmicW,
@@ -101,9 +145,8 @@ async function addSticky(word = '') {
 
 
 async function addText(word = ''){
-  const caption = csvData[1][2]; 
   const text = await miro.board.createText({
-    content: `<p>${caption}</p>`,
+    content: `<p>${word}</p>`,
     style: {
       color: '#1a1a1a', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -123,13 +166,6 @@ async function addText(word = ''){
   return text;
 }
 
-async function addItem(content){
-  
-}
-
-async function addCaption(){
-
-}
 
 async function addImage(imageUrl = '') {
   const image = await miro.board.createImage({
