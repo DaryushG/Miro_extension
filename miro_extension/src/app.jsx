@@ -45,6 +45,7 @@ async function createMapV() {
     items[i].add(await addText(csvData[i][3]));
     items[i].add(await addText(csvData[i][4]));
     items[i].add(await addText(csvData[i][5]));
+    items[i].add(await addImage());
 
     items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
     items[i].sync();
@@ -111,14 +112,17 @@ async function card(content = '') {
 }
 
 async function frame(content = '') {
-  let dyanmicW = 600;
-  let dyanmicL = 900;
+  let dyanmicW = 550;
+  let dyanmicL = 850;
 
   const frame = await miro.board.createFrame({
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
     width: dyanmicW,
     height: dyanmicL, 
+    style: {
+      fillColor: '#FF0000',
+    },
   });
   return frame;
 }
@@ -170,15 +174,15 @@ async function addText(word = ''){
 async function addImage(imageUrl = '') {
   const image = await miro.board.createImage({
     title: 'This is an image',
-    url: 'https://miro.com/blog/wp-content/uploads/2023/10/Frame-12772209-1536x806.png',
+    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNi_MTwBGCcXILrIY4B1tEvmPiU_V1DAfimQ&s',
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
-    width: 800, // Set either 'width', or 'height'
+    width: 100, // Set either 'width', or 'height'
     rotation: 0.0,
   });
   
   // Output the created item to the developer console
-  console.log(image);
+  return image;
 }
 
 async function addTitle(){

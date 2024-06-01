@@ -1,0 +1,185 @@
+[
+ {
+   "Product No": "MTN55534",
+   "Product Name": "V-Neck T-Shirt",
+   "Description": "Men's Lands' End Super-T V-Neck Tee",
+   "Retail Price": 30,
+   "Currency": "USD",
+   "Brand": "Land's End",
+   "Quantity": 2000,
+   "Colorways": [{ "Color" :"Gray Heather", "Hex Code": "#a09fa2"}],
+   "Size Range": "S, M, L, XL"
+  
+ },
+ {
+   "Product No": "MTN55461",
+   "Product Name": "Crewneck T-Shier",
+   "Description": "Men's FLX Short Sleeve Stretch Crewneck Tee",
+   "Retail Price": 11.99,
+   "Currency": "USD",
+   "Brand": "FLX",
+   "Quantity": 5000,
+   "Colorways": [{ "Color":"Olive", "Hex Code": "#838c7c"}, {"Color":"Maroon", "Hex Code":"#573a4d"} , {"Color":"Black", "Hex Code": "#1b1e23"}],
+   "Size Range": "XS, S, M, L, XL, 2XL"
+
+ },
+ {
+   "Product No": "MTN55530",
+   "Product Name": "Pocket Crewneck T-Shirt",
+   "Description": "Super-T Short Sleeve T-Shirt with Pocket",
+   "Retail Price": 32.95,
+   "Currency": "USD",
+   "Brand": "Land's End",
+   "Quantity": 14000,
+   "Colorways": [{ "Color":"Dark Charcoal Heather", "Hex Code": "#37363b"}, {"Color":"Chicory Blue", "Hex Code":"#5e88d5"} , {"Color":"Primrose Yellow", "Hex Code": "#f7d25d"},
+   {"Color":"Radiant Navy", "Hex Code":"#35374f"} , {"Color":"Rich Red", "Hex Code": "#ac1235"}],
+   "Size Range": "S, M, L, XL, 2XL"
+
+ },
+ {
+   "Product No": "MTN55201",
+   "Product Name": "Athletic Crewneck T-Shirt",
+   "Description": "Men's Tek Gear® Essential Gear Tee",
+   "Retail Price": 14.99,
+   "Currency": "USD",
+   "Brand": "Tek Gear",
+   "Quantity": 2500,
+   "Colorways": [{ "Color":"Orange", "Hex Code": "#f9998b"}, {"Color":"Black", "Hex Code":"#01010a"}],
+   "Size Range": "XS, S, M, L, XL, 2XL"
+
+ },
+ {
+   "Product No": "MTN55614",
+   "Product Name": "Polo T-Shirt",
+   "Description": "Men's Lands' End Super Soft Supima Polo",
+   "Retail Price": 59.95,
+   "Currency": "USD",
+   "Brand": "Land's End",
+   "Quantity": 8000,
+   "Colorways": [{ "Color":"Radiant Navy", "Hex Code": "#35374f"}, {"Color":"White", "Hex Code":"#f0f1f1"}, {"Color":"Blackberry", "Hex Code":"#3d263c"}],
+   "Radiant Navy, White, Blackberry"
+ },
+ {
+   "Product No": "MTN55284",
+   "Product Name": "Henley T-Shirt",
+   "Description": "Men's Sonoma Goods For Life® Everyday Henley",
+   "Retail Price": 14.99,
+   "Currency": "USD",
+   "Brand": "Sonoma",
+   "Quantity": 7000,
+   "Colorways": [{ "Color":"Amara Beige", "Hex Code": "#bfb5ad"}, {"Color":"Navy", "Hex Code":"#1e2f4c"}, {"Color":"Cool Dusk", "Hex Code":"#5c7a87"}],
+   "Size Range": "S, M, L, XL, 2XL"
+  
+ },
+ {
+   "Product No": "MTN55447",
+   "Product Name": "Crewneck T-Shirt",
+   "Description": "Men's Oversized T-Shirt",
+   "Retail Price": 24.95,
+   "Currency": "USD",
+   "Brand": "AE",
+   "Quantity": 10000,
+   "Colorways": [{ "Color":"Dark Blue", "Hex Code":"#4a5e80" }, {"Color":"Tan", "Hex Code":"#d5b68a"}, {"Color":"White", "Hex Code":"#f4f4fc"}, {"Color":"Faded Olive", "Hex Code":"#b4ac8c"}],
+   "Size Range": "S, M, L, XL, 2XL, 3XL"
+ },
+ {
+   "Product No": "MTN55449",
+   "Product Name": "Sweater T-Shirt",
+   "Description": "Men's Short-Sleeve Sweater T-Shirt",
+   "Retail Price": 34.95,
+   "Currency": "USD",
+   "Brand": "AE",
+   "Quantity": 10000,
+   "Colorways": [{ "Color":"Charcoal", "Hex Code":"#2e2c2c" }, {"Color":"Cream", "Hex Code":"#f4e5ce"}],
+   "Size Range": "S, M, L, XL, 2XL, 3XL"
+ },
+ {
+   "Product No": "MTN55628",
+   "Product Name": "Crewneck T-Shirt",
+   "Description": "Men's Essential Relaxed Fit T-Shirt",
+   "Retail Price": 25,
+   "Currency": "USD",
+   "Brand": "A&F",
+   "Quantity": 15000,
+   "Colorways": [{ "Color":"Light Blue", "Hex Code":"#a6c0d2"}, {"Color":"Light Green", "Hex Code":"#b4c3c0"}, { "Color":"Light Purple", "Hex Code":"#dddadf"}, {"Color":"Misty Gray", "Hex Code":"#cccccc"}],
+   "Size Range": "XS, S, M, L, XL, 2XL"
+
+ },
+ {
+   "Product No": "MTN55627",
+   "Product Name": "Sweater T-Shirt",
+   "Description": "Men's Plisse Johnny Collar Sweater Polo",
+   "Retail Price": 60,
+   "Currency": "USD",
+   "Brand": "A&F",
+   "Quantity": 6000,
+   "Colorways": [{ "Color":"Dark Green", "Hex Code": "#727368"}, {"Color":"Black", "Hex Code":"#0d0c14"}, {"Color":"White", "Hex Code":"#f3f0eb"}],
+   "Size Range": "XS, S, M, L, XL, 2XL"
+ },
+ {
+   "Product No": "MTN53840",
+   "Product Name": "Crewneck T-Shirt",
+   "Description": "Men's Dryblend Classic T-Shirt",
+   "Retail Price": 10,
+   "Currency": "USD",
+   "Brand": "Gildan",
+   "Quantity": 2000,
+   "Colorways": [{ "Color" :"Royal Blue", "Hex Code": "#045aa6"}],
+   "Size Range": "S, M, L, XL, 2XL, 3XL, 4XL"
+ },
+ {
+   "Product No": "MTN55261",
+   "Product Name": "Crewneck T-Shirt",
+   "Description": "Heavyweight Boxy Crew T-Shirt",
+   "Retail Price": 19.95,
+   "Currency": "USD",
+   "Brand": "Hollister",
+   "Quantity": 9000,
+   "Colorways": [{ "Color":"Green", "Hex Code": "#a5a494"}, {"Color":"Mauve", "Hex Code":"#e4cdcb"}, {"Color":"Navy", "Hex Code":"#2c4662"}],
+   "Size Range": "XS, S, M, L, XL, 2XL"
+ },
+ {
+   "Product No": "MTN55520",
+   "Product Name": "Henley T-Shirt",
+   "Description": "Short Sleeve Curve Hem Henley",
+   "Retail Price": 68,
+   "Currency": "USD",
+   "Brand": "Buck Mason",
+   "Quantity": 5500,
+   "Colorways": [{ "Color" :"Sage", "Hex Code":"#6f6656" }],
+   "Size Range": "S, M, L, XL, 2XL"
+ },
+ {
+   "Product No": "MTN55521",
+   "Product Name": "Henley T-Shirt",
+   "Description": "Cotton Blend Henley",
+   "Retail Price": 58,
+   "Currency": "USD",
+   "Brand": "Vuori",
+   "Quantity": 1000,
+   "Colorways": [{ "Color":"White", "Hex Code":"#0c0c0c" }, {"Color":"Black", "Hex Code":"#ececf4"}, {"Color":"Cashew", "Hex Code":"#e0ddcf"}],
+   "Size Range": "S, M, L, XL, 2XL"
+ },
+ {
+   "Product No": "MTN58933",
+   "Product Name": "Crewneck T-Shirt",
+   "Description": "Men's Casual Bonfire Tee",
+   "Retail Price": 29.99,
+   "Currency": "USD",
+   "Brand": "BDG",
+   "Quantity": 12000,
+   "Colorways": [{ "Color":"Dark Gray", "Hex Code":"#353b42"}, {"Color":"Brown", "Hex Code":"#a2764b"}, { "Color":"Taupe", "Hex Code":"#a38a7d"}, {"Color":"Purple", "Hex Code":"#7976c5"}],
+   "Size Range": "XS, S, M, L, XL, 2XL"
+ },
+ {
+   "Product No": "MTN58625",
+   "Product Name": "Crewneck T-Shirt",
+   "Description": "Standard Cloth Shortstop Heavyweight Cotton Tee",
+   "Retail Price": 29,
+   "Currency": "USD",
+   "Brand": "UO",
+   "Quantity": 12500,
+   "Colorways":  [{ "Color":"Neutral", "Hex Code":"#d1c7bb"}, { "Color":"Green", "Hex Code":"#04703a"}, {"Color":"Terracotta", "Hex Code":"#e59a84"}],
+   "Size Range": "XS, S, M, L, XL"
+ }
+]
