@@ -4,7 +4,9 @@ import Papa from 'papaparse';
 import '../src/assets/style.css';
 import products from '../tshirt-data.json'
 
-console.log(products); 
+
+
+console.log(products[0].product_name); 
 
 let frameW = null;
 let frameL = null;
@@ -34,17 +36,19 @@ async function createMapV() {
   mainFrame(csvData.length.toString());
   // await addText(csvData[2][2], posx = 0, posy = 30);
 
+  console.log(csvData);
+
   let countX = 0;
   let countY = 0;
 
  
-  for (let i = 0; i < csvData.length; i++) {
+  for (let i = 0; i < products.length; i++) {
     items[i] = await frame();
-    items[i].add(await card(csvData[i][1]));
-    items[i].add(await addText(csvData[i][2]));
-    items[i].add(await addText(csvData[i][3]));
-    items[i].add(await addText(csvData[i][4]));
-    items[i].add(await addText(csvData[i][5]));
+    items[i].add(await card(products[i].product_name));
+    items[i].add(await addText(products[i].description));
+    items[i].add(await addText(products[i].price));
+    items[i].add(await addText(products[i].currency));
+    items[i].add(await addText(products[i].brand));
     items[i].add(await addImage());
 
     items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
@@ -80,18 +84,20 @@ async function createMapV() {
     try {
       let children = await items[i].getChildren(); 
       if (children && children.length > 1) {
-        console.log(children[1].y); 
-        children[0].y -= 300; 
-        await children[0].sync(); 
-        children[1].y -= 250;
-        console.log(children[1].y); 
-        await children[1].sync()
-        
-        children[2].y -= 200; 
-        await children[2].sync();
-        children[3].y -= 150;
-        await children[3].sync();
-        await items[i].sync(); 
+        children[5].y -= 280; 
+        children[5].sync(); 
+        children[0].y -= 200; 
+        children[0].sync(); 
+        children[1].y -= 130; 
+        children[1].sync();
+        children[2].y -= 90;  
+        children[2].sync(); 
+        children[3].y -= 90; 
+        children[3].x += 60
+        children[3].sync()
+        children[4].y -= 10
+        children[4].sync()
+
       } else {
         console.log('Not enough children');
       }
@@ -120,9 +126,6 @@ async function frame(content = '') {
     y: 0, // Default value: vertical center of the board
     width: dyanmicW,
     height: dyanmicL, 
-    style: {
-      fillColor: '#FF0000',
-    },
   });
   return frame;
 }
@@ -130,9 +133,6 @@ async function frame(content = '') {
 async function mainFrame(content = '') {
   const frame = await miro.board.createFrame({
     title: csvData.length.toString(),
-    style: {
-      fillColor: '#555555',
-    },
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
     width: frameW,
@@ -161,7 +161,7 @@ async function addText(word = ''){
     },
     x: 0,
     y: 0,
-    width: 240,
+    width: 350,
     // 'height' is calculated automatically, based on 'width'
     rotation: 0, // The text item is upside down on the board
   });
