@@ -45,10 +45,10 @@ async function createMapV() {
   for (let i = 0; i < products.length; i++) {
     items[i] = await frame();
     items[i].add(await card(products[i].product_name));
-    items[i].add(await addText(products[i].description));
-    items[i].add(await addText(products[i].price));
-    items[i].add(await addText(products[i].currency));
-    items[i].add(await addText(products[i].brand));
+    items[i].add(await card(products[i].description));
+    items[i].add(await card(products[i].price.toString()));
+    items[i].add(await card(products[i].currency));
+    items[i].add(await card(products[i].brand));
     items[i].add(await addImage());
 
     items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
@@ -86,16 +86,15 @@ async function createMapV() {
       if (children && children.length > 1) {
         children[5].y -= 280; 
         children[5].sync(); 
-        children[0].y -= 200; 
+        children[0].y -= 120; 
         children[0].sync(); 
-        children[1].y -= 130; 
+        children[1].y -= 40; 
         children[1].sync();
-        children[2].y -= 90;  
+        children[2].y += 60;  
         children[2].sync(); 
-        children[3].y -= 90; 
-        children[3].x += 60
+        children[3].y += 140; 
         children[3].sync()
-        children[4].y -= 10
+        children[4].y += 220;
         children[4].sync()
 
       } else {
@@ -110,7 +109,7 @@ async function createMapV() {
 
 }
 
-async function card(content = '') {
+async function card(content = 'N/A') {
   const frame = await miro.board.createCard({
     title: content,
   });
@@ -124,6 +123,9 @@ async function frame(content = '') {
   const frame = await miro.board.createFrame({
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
+    style: {
+      fillColor: '#FFFFFF', // Default value: transparent (no fill)
+    },
     width: dyanmicW,
     height: dyanmicL, 
   });
@@ -177,7 +179,7 @@ async function addImage(imageUrl = '') {
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNi_MTwBGCcXILrIY4B1tEvmPiU_V1DAfimQ&s',
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
-    width: 100, // Set either 'width', or 'height'
+    width: 200, // Set either 'width', or 'height'
     rotation: 0.0,
   });
   
