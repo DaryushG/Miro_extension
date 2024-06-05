@@ -30,9 +30,9 @@ async function handleFileUpload(event) {
 
 let items = [];
 async function createMapV() {
-  let lengthScale = Math.floor((csvData.length / 4) + 1);
+  let lengthScale = Math.floor((products.length / 4) + 1);
   frameL = 900 * lengthScale; 
-  frameW = 600 * 4;
+  frameW = 900 * 4;
   mainFrame(csvData.length.toString());
   // await addText(csvData[2][2], posx = 0, posy = 30);
 
@@ -44,7 +44,7 @@ async function createMapV() {
  
   for (let i = 0; i < products.length; i++) {
     items[i] = await frame();
-    items[i].add(await card(products[i].product_name));
+    items[i].add(await addText(products[i].product_name));
     items[i].add(await card(products[i].description));
     items[i].add(await card(products[i].price.toString()));
     items[i].add(await card(products[i].currency));
@@ -61,13 +61,13 @@ async function createMapV() {
     // }
     
     if (countX <= 1) {
-      items[i].x = items[i].x - 600 * countX - 300 ;
+      items[i].x = items[i].x - 900 * countX - 450 ;
       items[i].sync();
       countX = countX + 1;
       
     }
     else {
-      items[i].x = items[i].x - 300 - (1 - countX) * 600  ;
+      items[i].x = items[i].x - 450 - (1 - countX) * 900  ;
       items[i].sync();
       if (countX == 3) {
         countX = 0;
@@ -84,17 +84,28 @@ async function createMapV() {
     try {
       let children = await items[i].getChildren(); 
       if (children && children.length > 1) {
-        children[5].y -= 280; 
+        children[5].y -= 120;
+        children[5].x -= 230; 
         children[5].sync(); 
-        children[0].y -= 120; 
+
+        children[0].y -= 370;
+        children[0].x -= 230; 
         children[0].sync(); 
-        children[1].y -= 40; 
+
+        children[1].y -= 300; 
+        children[1].x += 180; 
         children[1].sync();
-        children[2].y += 60;  
+
+        children[2].y -= 210;
+        children[2].x += 180; 
         children[2].sync(); 
-        children[3].y += 140; 
+
+        children[3].y -= 120; 
+        children[3].x += 180;
         children[3].sync()
-        children[4].y += 220;
+
+        children[4].y -= 30;
+        children[4].x += 180; 
         children[4].sync()
 
       } else {
@@ -117,7 +128,7 @@ async function card(content = 'N/A') {
 }
 
 async function frame(content = '') {
-  let dyanmicW = 550;
+  let dyanmicW = 850;
   let dyanmicL = 850;
 
   const frame = await miro.board.createFrame({
@@ -159,11 +170,11 @@ async function addText(word = ''){
       fillOpacity: 1, // Default value: 1 (solid color)
       fontFamily: 'ariel', // Default font type for the text
       fontSize: 20, // Default font size
-      textAlign: 'left', // Default alignment: left
+      textAlign: 'center', // Default alignment: left
     },
     x: 0,
     y: 0,
-    width: 350,
+    width: 300,
     // 'height' is calculated automatically, based on 'width'
     rotation: 0, // The text item is upside down on the board
   });
@@ -179,7 +190,7 @@ async function addImage(imageUrl = '') {
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNi_MTwBGCcXILrIY4B1tEvmPiU_V1DAfimQ&s',
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
-    width: 200, // Set either 'width', or 'height'
+    width: 350, // Set either 'width', or 'height'
     rotation: 0.0,
   });
   
