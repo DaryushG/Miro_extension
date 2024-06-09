@@ -59,7 +59,10 @@ async function createMapV() {
 
     items[i].add(await card(`Sizes: ${products[i].sizes}`));
     items[i].add(await card(`Floorset: ${products[i].floorset}`));
-    items[i].add(await color_tile('', products[i].colorways[0].hex));
+    for (let j = 0; j < products[i].colorways.length; j++){
+      items[i].add(await color_tile('', products[i].colorways[j].hex));
+
+    }
     // let hex = '#000000'
 
     // try {
@@ -116,9 +119,9 @@ async function createMapV() {
     try {
       let children = await items[i].getChildren(); 
       if (children && children.length > 1) {
-        children[8].y -= 120;
-        children[8].x -= 230; 
-        children[8].sync(); 
+        children[children.length-1].y -= 120;
+        children[children.length-1].x -= 230; 
+        children[children.length-1].sync(); 
 
         children[0].y -= 370;
         children[0].x -= 230; 
@@ -148,9 +151,18 @@ async function createMapV() {
         children[6].x += 180; 
         children[6].sync()
 
-        children[7].y += 240; 
-        children[7].x += 150; 
-        children[7].sync(); 
+        let i = 7;
+        let xVal = 80; 
+
+        while (i < children.length-1){
+          children[i].y += 240
+          children[i].x += xVal; 
+          children[i].sync(); 
+          i += 1; 
+          xVal += 65; 
+
+        }
+
 
 
 
@@ -194,7 +206,7 @@ async function color_tile(content = 'N/A', tile_color = '#ff0000'){
     },
     x: 0, // Default value: center of the board
     y: 0, // Default value: center of the board
-    width: 75,
+    width: 60,
     height: 50,
   });
   return frame; 
