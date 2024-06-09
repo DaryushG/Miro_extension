@@ -1,0 +1,199 @@
+[
+    {
+      "product_no": "MTN55534",
+      "product_type": "V-Neck T-Shirt",
+      "product_name": "Men's Lands' End Super-T V-Neck Tee",
+      "price": 30,
+      "currency": "USD",
+      "brand": "Land's End",
+      "quantity": 2000,
+      "colorways": [{ "Color" :"Gray Heather", "hex": "#a09fa2"}],
+      "sizes": "S, M, L, XL",
+      "floorset": "July"
+     
+    },
+    {
+      "product_no": "MTN55461",
+      "product_type": "Crewneck T-Shier",
+      "product_name": "Men's FLX Short Sleeve Stretch Crewneck Tee",
+      "price": 11.99,
+      "currency": "USD",
+      "brand": "FLX",
+      "quantity": 5000,
+      "colorways": [{ "Color":"Olive", "hex": "#838c7c"}, {"Color":"Maroon", "hex":"#573a4d"} , {"Color":"Black", "hex": "#1b1e23"}],
+      "sizes": "XS, S, M, L, XL, 2XL",
+      "floorset": "July"
+    },
+    {
+      "product_no": "MTN55530",
+      "product_type": "Pocket Crewneck T-Shirt",
+      "product_name": "Super-T Short Sleeve T-Shirt with Pocket",
+      "price": 32.95,
+      "currency": "USD",
+      "brand": "Land's End",
+      "quantity": 14000,
+      "colorways": [{ "Color":"Dark Charcoal Heather", "hex": "#37363b"}, {"Color":"Chicory Blue", "hex":"#5e88d5"} , {"Color":"Primrose Yellow", "hex": "#f7d25d"},
+      {"Color":"Radiant Navy", "hex":"#35374f"} , {"Color":"Rich Red", "hex": "#ac1235"}],
+      "sizes": "S, M, L, XL, 2XL",
+      "floorset": "August"
+   
+    },
+    {
+      "product_no": "MTN55201",
+      "product_type": "Athletic Crewneck T-Shirt",
+      "product_name": "Men's Tek Gear® Essential Gear Tee",
+      "price": 14.99,
+      "currency": "USD",
+      "brand": "Tek Gear",
+      "quantity": 2500,
+      "colorways": [{ "Color":"Orange", "hex": "#f9998b"}, {"Color":"Black", "hex":"#01010a"}],
+      "sizes": "XS, S, M, L, XL, 2XL",
+      "floorset": "July"
+   
+    },
+    {
+      "product_no": "MTN55614",
+      "product_type": "Polo T-Shirt",
+      "product_name": "Men's Lands' End Super Soft Supima Polo",
+      "price": 59.95,
+      "currency": "USD",
+      "brand": "Land's End",
+      "quantity": 8000,
+      "colorways": [{ "Color":"Radiant Navy", "hex": "#35374f"}, {"Color":"White", "hex":"#f0f1f1"}, {"Color":"Blackberry", "hex":"#3d263c"}],
+      "floorset": "July"
+    },
+    {
+      "product_no": "MTN55284",
+      "product_type": "Henley T-Shirt",
+      "product_name": "Men's Sonoma Goods For Life® Everyday Henley",
+      "price": 14.99,
+      "currency": "USD",
+      "brand": "Sonoma",
+      "quantity": 7000,
+      "colorways": [{ "Color":"Amara Beige", "hex": "#bfb5ad"}, {"Color":"Navy", "hex":"#1e2f4c"}, {"Color":"Cool Dusk", "hex":"#5c7a87"}],
+      "sizes": "S, M, L, XL, 2XL",
+      "floorset": "August"
+     
+    },
+    {
+      "product_no": "MTN55447",
+      "product_type": "Crewneck T-Shirt",
+      "product_name": "Men's Oversized T-Shirt",
+      "price": 24.95,
+      "currency": "USD",
+      "brand": "AE",
+      "quantity": 10000,
+      "colorways": [{ "Color":"Dark Blue", "hex":"#4a5e80" }, {"Color":"Tan", "hex":"#d5b68a"}, {"Color":"White", "hex":"#f4f4fc"}, {"Color":"Faded Olive", "hex":"#b4ac8c"}],
+      "sizes": "S, M, L, XL, 2XL, 3XL",
+      "floorset": "September"
+    },
+    {
+      "product_no": "MTN55449",
+      "product_type": "Sweater T-Shirt",
+      "product_name": "Men's Short-Sleeve Sweater T-Shirt",
+      "price": 34.95,
+      "currency": "USD",
+      "brand": "AE",
+      "quantity": 10000,
+      "colorways": [{ "Color":"Charcoal", "hex":"#2e2c2c" }, {"Color":"Cream", "hex":"#f4e5ce"}],
+      "sizes": "S, M, L, XL, 2XL, 3XL",
+      "floorset": "July"
+    },
+    {
+      "product_no": "MTN55628",
+      "product_type": "Crewneck T-Shirt",
+      "product_name": "Men's Essential Relaxed Fit T-Shirt",
+      "price": 25,
+      "currency": "USD",
+      "brand": "A&F",
+      "quantity": 15000,
+      "colorways": [{ "Color":"Light Blue", "hex":"#a6c0d2"}, {"Color":"Light Green", "hex":"#b4c3c0"}, { "Color":"Light Purple", "hex":"#dddadf"}, {"Color":"Misty Gray", "hex":"#cccccc"}],
+      "sizes": "XS, S, M, L, XL, 2XL",
+      "floorset": "September"
+   
+    },
+    {
+      "product_no": "MTN55627",
+      "product_type": "Sweater T-Shirt",
+      "product_name": "Men's Plisse Johnny Collar Sweater Polo",
+      "price": 60,
+      "currency": "USD",
+      "brand": "A&F",
+      "quantity": 6000,
+      "colorways": [{ "Color":"Dark Green", "hex": "#727368"}, {"Color":"Black", "hex":"#0d0c14"}, {"Color":"White", "hex":"#f3f0eb"}],
+      "sizes": "XS, S, M, L, XL, 2XL",
+      "floorset": "September"
+    },
+    {
+      "product_no": "MTN53840",
+      "product_type": "Crewneck T-Shirt",
+      "product_name": "Men's Dryblend Classic T-Shirt",
+      "price": 10,
+      "currency": "USD",
+      "brand": "Gildan",
+      "quantity": 2000,
+      "colorways": [{ "Color" :"Royal Blue", "hex": "#045aa6"}],
+      "sizes": "S, M, L, XL, 2XL, 3XL, 4XL",
+      "floorset": "August"
+    },
+    {
+      "product_no": "MTN55261",
+      "product_type": "Crewneck T-Shirt",
+      "product_name": "Heavyweight Boxy Crew T-Shirt",
+      "price": 19.95,
+      "currency": "USD",
+      "brand": "Hollister",
+      "quantity": 9000,
+      "colorways": [{ "Color":"Green", "hex": "#a5a494"}, {"Color":"Mauve", "hex":"#e4cdcb"}, {"Color":"Navy", "hex":"#2c4662"}],
+      "sizes": "XS, S, M, L, XL, 2XL",
+      "floorset": "September"
+    },
+    {
+      "product_no": "MTN55520",
+      "product_type": "Henley T-Shirt",
+      "product_name": "Short Sleeve Curve Hem Henley",
+      "price": 68,
+      "currency": "USD",
+      "brand": "Buck Mason",
+      "quantity": 5500,
+      "colorways": [{ "Color" :"Sage", "hex":"#6f6656" }],
+      "sizes": "S, M, L, XL, 2XL",
+      "floorset": "July"
+    },
+    {
+      "product_no": "MTN55521",
+      "product_type": "Henley T-Shirt",
+      "product_name": "Cotton Blend Henley",
+      "price": 58,
+      "currency": "USD",
+      "brand": "Vuori",
+      "quantity": 1000,
+      "colorways": [{ "Color":"White", "hex":"#0c0c0c" }, {"Color":"Black", "hex":"#ececf4"}, {"Color":"Cashew", "hex":"#e0ddcf"}],
+      "sizes": "S, M, L, XL, 2XL",
+      "floorset": "September"
+    },
+    {
+      "product_no": "MTN58933",
+      "product_type": "Crewneck T-Shirt",
+      "product_name": "Men's Casual Bonfire Tee",
+      "price": 29.99,
+      "currency": "USD",
+      "brand": "BDG",
+      "quantity": 12000,
+      "colorways": [{ "Color":"Dark Gray", "hex":"#353b42"}, {"Color":"Brown", "hex":"#a2764b"}, { "Color":"Taupe", "hex":"#a38a7d"}, {"Color":"Purple", "hex":"#7976c5"}],
+      "sizes": "XS, S, M, L, XL, 2XL",
+      "floorset": "August"
+    },
+    {
+      "product_no": "MTN58625",
+      "product_type": "Crewneck T-Shirt",
+      "product_name": "Standard Cloth Shortstop Heavyweight Cotton Tee",
+      "price": 29,
+      "currency": "USD",
+      "brand": "UO",
+      "quantity": 12500,
+      "colorways":  [{ "Color":"Neutral", "hex":"#d1c7bb"}, { "Color":"Green", "hex":"#04703a"}, {"Color":"Terracotta", "hex":"#e59a84"}],
+      "sizes": "XS, S, M, L, XL",
+      "floorset": "August"
+    }
+   ]

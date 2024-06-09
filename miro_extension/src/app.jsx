@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import Papa from 'papaparse'; 
 import '../src/assets/style.css';
-import products from '../tshirt-data.json'
+import products from '../new_data.json'
 
 
 
@@ -45,11 +45,43 @@ async function createMapV() {
   for (let i = 0; i < products.length; i++) {
     items[i] = await frame();
     items[i].add(await addText(products[i].product_name));
-    items[i].add(await card(products[i].description));
-    items[i].add(await card(products[i].price.toString()));
-    items[i].add(await card(products[i].currency));
-    items[i].add(await card(products[i].brand));
+    items[i].add(await card(`Type: ${products[i].product_type}`));
+    items[i].add(await card(`Price: ${products[i].price.toString()}, Currency: ${products[i].currency}`));
+    items[i].add(await card(`Quantity: ${products[i].quantity.toString()}`));
+    if (items[i].brand == ""){
+        items[i].add(await card('Brand: N/A')); 
+    }
+
+    else {
+      items[i].add(await card(`Brand: ${products[i].brand}`));
+    }
+
+
+    items[i].add(await card(`Sizes: ${products[i].sizes}`));
+    items[i].add(await card(`Floorset: ${products[i].floorset}`));
+    items[i].add(await color_tile('', products[i].colorways[0].hex));
+    // let hex = '#000000'
+
+    // try {
+    //   hex = products[i].colorways[0].hex; 
+    // } catch (error) {
+    //   hex = '#000000'; 
+    // }
+
+
+    // try {
+    //   items[i].add(await color_tile('', hex));
+    // } catch (error) {
+    //   items[i].add(await addText('No colorway available')); 
+    // }
+
+    
     items[i].add(await addImage());
+    
+
+   
+    
+
 
     items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
     items[i].sync();
@@ -84,9 +116,9 @@ async function createMapV() {
     try {
       let children = await items[i].getChildren(); 
       if (children && children.length > 1) {
-        children[5].y -= 120;
-        children[5].x -= 230; 
-        children[5].sync(); 
+        children[8].y -= 120;
+        children[8].x -= 230; 
+        children[8].sync(); 
 
         children[0].y -= 370;
         children[0].x -= 230; 
@@ -108,6 +140,22 @@ async function createMapV() {
         children[4].x += 180; 
         children[4].sync()
 
+        children[5].y += 60;
+        children[5].x += 180; 
+        children[5].sync()
+
+        children[6].y += 150;
+        children[6].x += 180; 
+        children[6].sync()
+
+        children[7].y += 240; 
+        children[7].x += 150; 
+        children[7].sync(); 
+
+
+
+
+
       } else {
         console.log('Not enough children');
       }
@@ -125,6 +173,31 @@ async function card(content = 'N/A') {
     title: content,
   });
   return frame;
+}
+
+async function color_tile(content = 'N/A', tile_color = '#ff0000'){
+  const frame = await miro.board.createShape({
+    content: '',
+    shape: 'round_rectangle',
+    style: {
+      color: tile_color, // Default text color: '#1a1a1a' (black)
+      fillColor: tile_color, // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: tile_color, // Default border color: '#ffffff` (white)
+      borderWidth: 2, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
+    },
+    x: 0, // Default value: center of the board
+    y: 0, // Default value: center of the board
+    width: 75,
+    height: 50,
+  });
+  return frame; 
 }
 
 async function frame(content = '') {
