@@ -30,7 +30,7 @@ async function handleFileUpload(event) {
 
 let items = [];
 async function createMapV() {
-  let lengthScale = Math.floor((products.length / 4) + 1);
+  let lengthScale = Math.ceil((products.length / 4));
   frameL = 900 * lengthScale; 
   frameW = 900 * 4;
   mainFrame(csvData.length.toString());
@@ -59,6 +59,8 @@ async function createMapV() {
 
     items[i].add(await card(`Sizes: ${products[i].sizes}`));
     items[i].add(await card(`Floorset: ${products[i].floorset}`));
+    items[i].add(await addText(products[i].product_no));
+
     for (let j = 0; j < products[i].colorways.length; j++){
       items[i].add(await color_tile('', products[i].colorways[j].hex));
 
@@ -83,7 +85,6 @@ async function createMapV() {
     
 
    
-    
 
 
     items[i].y = items[i].y - (900 * lengthScale / 2 - 450) + 900 * countY;
@@ -151,15 +152,19 @@ async function createMapV() {
         children[6].x += 180; 
         children[6].sync()
 
-        let i = 7;
-        let xVal = 80; 
+        children[7].y += 150;
+        children[7].x -= 230; 
+        children[7].sync()
+
+        let i = 8;
+        let xVal = 340; 
 
         while (i < children.length-1){
           children[i].y += 240
-          children[i].x += xVal; 
+          children[i].x -= xVal; 
           children[i].sync(); 
           i += 1; 
-          xVal += 65; 
+          xVal -= 65; 
 
         }
 
