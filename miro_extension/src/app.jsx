@@ -79,7 +79,7 @@ async function createMapV() {
     // }
 
     
-    items[i].add(await addImage());
+    items[i].add(await addImage(products[i].url));
     
 
    
@@ -303,7 +303,7 @@ async function addText(word = ''){
 async function addImage(imageUrl = '') {
   const image = await miro.board.createImage({
     title: 'This is an image',
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNi_MTwBGCcXILrIY4B1tEvmPiU_V1DAfimQ&s',
+    url: imageUrl,
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
     width: 350, // Set either 'width', or 'height'
