@@ -6,7 +6,6 @@ import products from '../new_data.json'
 
 
 
-console.log(products[0].product_name); 
 
 let frameW = null;
 let frameL = null;
@@ -36,7 +35,6 @@ async function createMapV() {
   mainFrame(csvData.length.toString());
   // await addText(csvData[2][2], posx = 0, posy = 30);
 
-  console.log(csvData);
 
   let countX = 0;
   let countY = 0;
@@ -132,23 +130,23 @@ async function createMapV() {
         children[1].x += 180; 
         children[1].sync();
 
-        children[2].y -= 210;
+        children[2].y = children[1].y + (children[1].height) + 8;
         children[2].x += 180; 
         children[2].sync(); 
 
-        children[3].y -= 120; 
+        children[3].y = children[2].y + (children[2].height) + 8; 
         children[3].x += 180;
         children[3].sync()
 
-        children[4].y -= 30;
+        children[4].y = children[3].y + (children[3].height) + 8; 
         children[4].x += 180; 
         children[4].sync()
 
-        children[5].y += 60;
+        children[5].y = children[4].y + (children[4].height) + 8; 
         children[5].x += 180; 
         children[5].sync()
 
-        children[6].y += 150;
+        children[6].y = children[5].y + (children[5].height) + 8; 
         children[6].x += 180; 
         children[6].sync()
 
@@ -157,22 +155,47 @@ async function createMapV() {
         children[7].sync()
 
         let i = 8;
-        let xVal = 340; 
+        let xVal = 230; 
+        let count = 0;
 
-        while (i < children.length-1){
-          children[i].y += 240
-          children[i].x -= xVal; 
-          children[i].sync(); 
-          i += 1; 
-          xVal -= 65; 
-
+        if ((children.length - 1 - i) % 2 == 0) {
+          while (i < children.length - 1){
+            if (i % 2 == 0) {
+              children[i].y += 240
+              children[i].x = xVal + ((count) * 65); 
+              children[i].sync();
+            }
+            else {
+              children[i].y += 240
+              children[i].x = xVal - ((count) * 65);
+              children[i].sync(); 
+            }
+            i += 1;
+            if (i % 2 == 1) {
+              count += 1;
+            }
+          }
         }
 
-
-
-
-
-
+        else {
+          xVal = 195;
+          while (i < children.length - 1){
+            if (i % 2 == 0) {
+              children[i].y += 240
+              children[i].x = xVal + ((count) * 65); 
+              children[i].sync();
+            }
+            else {
+              children[i].y += 240
+              children[i].x = xVal - ((count) * 65);
+              children[i].sync(); 
+            }
+            i += 1;
+            if (i % 2 == 1) {
+              count += 1;
+            }
+          }
+        }
       } else {
         console.log('Not enough children');
       }
@@ -187,6 +210,9 @@ async function createMapV() {
 
 async function card(content = 'N/A') {
   const frame = await miro.board.createCard({
+    style: {
+      cardTheme: '#d3d3d3', 
+    },
     title: content,
   });
   return frame;
@@ -235,7 +261,7 @@ async function frame(content = '') {
 
 async function mainFrame(content = '') {
   const frame = await miro.board.createFrame({
-    title: csvData.length.toString(),
+    title: products.length.toString() + " Products",
     x: 0, // Default value: horizontal center of the board
     y: 0, // Default value: vertical center of the board
     width: frameW,
