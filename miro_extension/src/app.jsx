@@ -4,27 +4,14 @@ import Papa from "papaparse";
 import "../src/assets/style.css";
 import products from "../new_data.json";
 
+import {fs} from "fs";
+
 console.log(products[0].product_name);
 
 let frameW = null;
 let frameL = null;
 
-let csvData = null;
-async function handleFileUpload(event) {
-  const file = event.target.files[0];
-  if (!file) return;
 
-  const reader = new FileReader();
-  reader.onload = async function (event) {
-    const csvText = event.target.result;
-    Papa.parse(csvText, {
-      complete: function (results) {
-        csvData = results.data;
-      },
-    });
-  };
-  reader.readAsText(file);
-}
 
 let items = [];
 async function createMapV() {
@@ -34,7 +21,6 @@ async function createMapV() {
   mainFrame(products.length.toString());
   // await addText(csvData[2][2], posx = 0, posy = 30);
 
-  console.log(csvData);
 
   let countX = 0;
   let countY = 0;
@@ -255,7 +241,7 @@ async function addSticky(word = "") {
 
 async function addText(word = "") {
   const text = await miro.board.createText({
-    content: `<p>${word}</p>`,
+    content: `${word}`,
     style: {
       color: "#1a1a1a", // Default value: #1a1a1a (black)
       fillColor: "transparent", // Default value: transparent (no fill)
@@ -273,6 +259,37 @@ async function addText(word = "") {
 
   // Output the created item to the developer console
   return text;
+}
+
+async function two_way_sync() {
+ for (let i = 0; i < items.length; i++){
+   let children = await items[i].getChildren();
+   let product_no = children[7]; 
+
+  const matchingProduct = products.find(product => product.product_no === product_no.content);
+  matchingProduct.product_name = children[0].content;
+  matchingProduct.product_type = children[1].title.substring(children[1].title.indexOf(':') + 2);
+  matchingProduct.brand = children[4].title.substring(children[4].title.indexOf(':') + 2);
+  matchingProduct.sizes = children[5].title.substring(children[5].title.indexOf(':') + 2);
+  matchingProduct.floorset = children[6].title.substring(children[6].title.indexOf(':') + 2);
+
+ 
+
+  
+
+ }
+
+// Convert the products array to JSON
+const jsonData = JSON.stringify(products);
+
+// Write the JSON data to the new_data.json file
+fs.writeFile('new_data.json', jsonData, 'utf8', (err) => {
+  if (err) {
+    console.error('An error occurred while writing to the file:', err);
+  } else {
+    console.log('Data has been written to new_data.json');
+  }
+});
 }
 
 async function addImage(imageUrl = "") {
@@ -300,11 +317,15 @@ const App = () => {
       </div>
       <div className="cs1 ce12">
         <form>
-          <input type="file" onChange={handleFileUpload} /> {}
+        
           <button type="button" onClick={createMapV}>
-            Submit
-          </button>{" "}
-          {}
+            Create Board
+          </button>
+
+          <button type = "button" onClick = {two_way_sync}>
+            Sync
+          </button>
+          
         </form>
       </div>
     </div>
