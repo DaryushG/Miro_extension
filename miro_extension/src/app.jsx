@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import Papa from "papaparse";
 import "../src/assets/style.css";
 import products from "../new_data.json";
-
-import {fs} from "fs";
+// import { promises } from "fs";
+// const { readFile, writeFile } = promises;
 
 console.log(products[0].product_name);
 
@@ -283,13 +283,13 @@ async function two_way_sync() {
 const jsonData = JSON.stringify(products);
 
 // Write the JSON data to the new_data.json file
-fs.writeFile('new_data.json', jsonData, 'utf8', (err) => {
-  if (err) {
-    console.error('An error occurred while writing to the file:', err);
-  } else {
-    console.log('Data has been written to new_data.json');
-  }
-});
+// writeFile('new_data.json', jsonData, 'utf8', (err) => {
+//   if (err) {
+//     console.error('An error occurred while writing to the file:', err);
+//   } else {
+//     console.log('Data has been written to new_data.json');
+//   }
+// });
 }
 
 async function addImage(imageUrl = "") {
